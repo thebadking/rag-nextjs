@@ -27,8 +27,10 @@ export default function ChatInput(props: ChatInputProps) {
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     // Handle the file selection
-    const file = event.target.files[0];
-    // Do something with the file...
+    if (event.target.files) {
+      const file = event.target.files[0];
+      // Do something with the file...
+    }
   };
 
   return (

@@ -2,13 +2,14 @@
   "name": "rag-nextjs",
   "version": "0.1.0",
   "scripts": {
-    "dev": "npm-run-all --parallel next:dev server",
+    "dev": "npm-run-all --parallel next:dev watch server",
     "next:dev": "next dev",
     "server": "node server.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate": "node app/api/chat/engine/generate.mjs"
+    "generate": "node app/api/chat/engine/generate.mjs",
+    "watch": "node app/api/chat/engine/fileWatcher.mjs"
   },
   "dependencies": {
     "ai": "^2.2.27",
@@ -16,6 +17,7 @@
     "chromadb-default-embed": "^2.13.2",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "fs": "^0.0.1-security",
     "llamaindex": "^0.0.48",
     "multer": "^1.4.5-lts.1",
     "next": "^14.0.3",

@@ -19,9 +19,8 @@ const dataDir = path.resolve(__dirname, './data');
 export function watchDataDirectory(serviceContext) {
   console.log(`>> Starting to watch ${dataDir} for changes...`); // Log when the watching starts
 
-  // [BUG] fs.watch unable to detect added files event !!!
   // [TBD] "npm run generate" to generate embeddings/store 
-  fs.watch(dataDir, (eventType, filename) => {
+  fs.watchFile(dataDir, (eventType, filename) => {
 		console.log(`>> Event type: ${eventType}; File: ${filename}`); // Log all events
 
     if (eventType === 'change' && filename) {
